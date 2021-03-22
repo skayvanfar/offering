@@ -3,6 +3,8 @@ package ir.sk.offering;
 import ir.sk.offering.adt.OfferCollection;
 import ir.sk.offering.adt.ResizingArrayOfferCollection;
 import ir.sk.offering.client.JsonReader;
+import ir.sk.offering.command.Command;
+import ir.sk.offering.command.CommandFactory;
 import ir.sk.offering.model.Offer;
 import ir.sk.offering.service.OfferService;
 import ir.sk.offering.service.OfferServiceImpl;
@@ -36,6 +38,10 @@ public class Main {
         }
 
         String operation = args[0];
+
+        /*CommandFactory commandFactory = new CommandFactory(offerService, args);
+        Command command = commandFactory.CreateCommand(args[0]);
+        System.out.println(command.execute());*/
 
         switch (operation) {
             case "count_by_price_range":
